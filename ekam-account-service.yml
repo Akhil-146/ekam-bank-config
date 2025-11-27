@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:accountdb  # Using H2 In-Memory DB for now
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+
+# Custom Business Logic Properties
+accounts:
+  message: "Welcome to Ekam Bank Account Service - Dev Environment"
+  build-version: "1.0.0"

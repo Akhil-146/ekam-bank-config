@@ -1,0 +1,14 @@
+# Global Configuration shared by ALL services
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # Expose all endpoints (Health, Metrics, Refresh)
+  endpoint:
+    health:
+      show-details: always
+
+spring:
+  main:
+    banner-mode: off
