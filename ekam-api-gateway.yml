@@ -17,4 +17,4 @@ spring:
         - id: account-service-route
           uri: lb://ekam-account-service
           predicates:
-            - Path=/accounts/**
+            - Path=/api/accounts/**
