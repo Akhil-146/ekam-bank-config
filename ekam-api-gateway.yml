@@ -1,5 +1,5 @@
 server:
-  port: 8072 # Standard Gateway Port
+  port: 8072
 
 eureka:
   client:
@@ -11,13 +11,10 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true # Auto-create routes based on Service ID (optional but useful)
+          enabled: true
           lower-case-service-id: true
       routes:
         - id: account-service-route
-          # Load Balance (lb) request to the service named 'ekam-account-service'
           uri: lb://ekam-account-service
           predicates:
-            - Path=/accounts/** # If user hits localhost:8072/accounts/...
-          filters:
-            - RewritePath=/accounts/(?<segment>.*), /$\{segment} # Strip '/accounts' prefix before forwarding
+            - Path=/accounts/**
